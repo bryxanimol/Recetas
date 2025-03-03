@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -18,18 +18,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
-
+import androidx.navigation.NavController
 import com.example.recetas.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeView() {
+fun HomeView(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Recetas", color = Color.White) },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color.Blue)
+                title = { Text("Recetas", color = Color.Black) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(245, 245, 220))
             )
         }
     ) { paddingValues ->
@@ -39,16 +39,16 @@ fun HomeView() {
                 .padding(paddingValues),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            item { RecipeItem(imageRes = R.drawable.comida1, buttonText = "Ver Receta") }
-            item { RecipeItem(imageRes = R.drawable.comida2, buttonText = "Ver Receta") }
-            item { RecipeItem(imageRes = R.drawable.comida3, buttonText = "Ver Receta") }
-            item { RecipeItem(imageRes = R.drawable.comida4, buttonText = "Ver Receta") }
+            item { RecipeItem(navController, R.drawable.comida1, "Ver Receta", "recipeDetail1") }
+            item { RecipeItem(navController, R.drawable.comida2, "Ver Receta", "recipeDetail2") }
+            item { RecipeItem(navController, R.drawable.comida3, "Ver Receta", "recipeDetail3") }
+            item { RecipeItem(navController, R.drawable.comida4, "Ver Receta", "recipeDetail4") }
         }
     }
 }
 
 @Composable
-fun RecipeItem(imageRes: Int, buttonText: String) {
+fun RecipeItem(navController: NavController, imageRes: Int, buttonText: String, route: String) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(8.dp)
@@ -59,8 +59,15 @@ fun RecipeItem(imageRes: Int, buttonText: String) {
             modifier = Modifier.size(200.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Button(onClick = { /* Acción del botón */ }) {
-            Text(text = buttonText, fontSize = 16.sp)
+        Button(
+            onClick = { navController.navigate(route) },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(245, 245, 220),
+                contentColor = Color.Black
+            )
+        ) {
+            Text(text = "Ir a receta", fontSize = 16.sp)
         }
+
     }
 }
