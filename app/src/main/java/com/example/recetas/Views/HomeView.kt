@@ -28,7 +28,7 @@ fun HomeView(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Recetas", color = Color.Black) },
+                title = { Text("Recetas-Postreria", color = Color.Black) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(245, 245, 220))
             )
         }
@@ -39,10 +39,10 @@ fun HomeView(navController: NavController) {
                 .padding(paddingValues),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            item { RecipeItem(navController, R.drawable.comida1, "Ver Receta", "recipeDetail1") }
-            item { RecipeItem(navController, R.drawable.comida2, "Ver Receta", "recipeDetail2") }
-            item { RecipeItem(navController, R.drawable.comida3, "Ver Receta", "recipeDetail3") }
-            item { RecipeItem(navController, R.drawable.comida4, "Ver Receta", "recipeDetail4") }
+            item { RecipeItem(navController, R.drawable.comida1, "Cubiletes de crema pastelera", "recipeDetail1") }
+            item { RecipeItem(navController, R.drawable.comida2, "Cubiletes de elote", "recipeDetail2") }
+            item { RecipeItem(navController, R.drawable.comida3, "Pay de limon", "recipeDetail3") }
+            item { RecipeItem(navController, R.drawable.comida4, "Coyotas sonorenses", "recipeDetail4") }
         }
     }
 }
@@ -66,7 +66,7 @@ fun RecipeItem(navController: NavController, imageRes: Int, buttonText: String, 
                 contentColor = Color.Black
             )
         ) {
-            Text(text = "Ir a receta", fontSize = 16.sp)
+            Text(text = buttonText, fontSize = 16.sp)
         }
 
     }
