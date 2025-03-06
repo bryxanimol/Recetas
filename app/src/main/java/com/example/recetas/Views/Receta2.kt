@@ -1,28 +1,29 @@
 package com.example.recetas.Views
 
-
-
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import com.example.recetas.R
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -30,8 +31,15 @@ fun RecipeDetailView2(navController: NavController, background: Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Cubiletes de elote", color = Color.Black) },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(191, 223, 255))
+                title = {
+                    Text(
+                        "Cubiletes de Elote🌽 ",
+                        color = Color.White,
+                        fontSize = 22.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFFFBC02D)) // Amarillo maíz
             )
         }
     ) { paddingValues ->
@@ -39,59 +47,94 @@ fun RecipeDetailView2(navController: NavController, background: Modifier) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .verticalScroll(rememberScrollState()),
+                .verticalScroll(rememberScrollState())
+                .background(Color(0xFFFFF9C4)), // Fondo amarillo pálido
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.comida2),
-                contentDescription = null,
+            // 🔥 Borde decorativo para la imagen
+            Box(
                 modifier = Modifier
-                    .size(250.dp)
-                    .padding(16.dp) // Espaciado interno
-                    .border(4.dp, Color.White) // 📌 Agrega un borde blanco de 4dp
+                    .size(260.dp) // El tamaño de la imagen se ajusta al borde
+                    .clip(RoundedCornerShape(16.dp)) // Bordes redondeados
+                    .background(Color(0xFFE57373)) // Borde color melocotón claro (contrasta con el amarillo)
+                    .padding(6.dp) // Espaciado interno para el borde
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.cubiletes1),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(12.dp)) // Bordes redondeados para la imagen
+                        .shadow(6.dp), // Sombra más ligera para profundidad
+                    contentScale = ContentScale.Crop // Ajusta la imagen para llenar el contenedor sin distorsionarse
+                )
+            }
 
-            )
-            Text(
-                text = "Ingredientes\n" +
-                        "Para la masa:\n" +
-                        "1 taza de harina de maíz (puede ser de la que se usa para tamales)\n" +
-                        "1 taza de harina de trigo\n" +
-                        "½ taza de mantequilla derretida\n" +
-                        "½ taza de azúcar\n" +
-                        "1 huevo\n" +
-                        "1 cucharadita de polvo para hornear\n" +
-                        "½ taza de leche\n" +
-                        "1 cucharadita de esencia de vainilla\n" +
-                        "Pizca de sal\n" +
-                        "Para el relleno de elote:\n" +
-                        "2 tazas de granos de elote (puedes usar elote fresco o enlatado)\n" +
-                        "½ taza de crema\n" +
-                        "1 cucharadita de azúcar\n" +
-                        "1 cucharadita de esencia de vainilla\n" +
-                        "2 cucharadas de maicena disueltas en 3 cucharadas de agua\n" +
-                        "Pizca de sal\n" +
-                        "Preparación\n" +
-                        "1. Preparar la masa:\n" +
-                        "Precalienta el horno a 180°C y engrasa un molde para cubiletes o flaneras pequeñas.\n" +
-                        "En un tazón grande, mezcla las harinas, el polvo para hornear, el azúcar y la sal.\n" +
-                        "Agrega la mantequilla derretida y el huevo, mezcla bien hasta obtener una masa suave.\n" +
-                        "Añade la leche poco a poco y la esencia de vainilla. Mezcla hasta obtener una masa homogénea, suave pero no líquida.\n" +
-                        "2. Preparar el relleno de elote:\n" +
-                        "Si estás usando elote fresco, licúa los granos con un poco de leche hasta que se forme una mezcla suave. Si usas elote enlatado, licúa los granos con la crema, azúcar, y vainilla.\n" +
-                        "Cocina la mezcla de elote a fuego medio en una cacerola.\n" +
-                        "Añade la maicena disuelta en agua para espesar el relleno. Cocina por 5-7 minutos hasta que espese.\n" +
-                        "Retira del fuego y deja enfriar un poco.\n" +
-                        "3. Formar los cubiletes:\n" +
-                        "Coloca una cucharada de masa en cada molde, asegurándote de cubrir el fondo.\n" +
-                        "Añade una cucharada del relleno de elote sobre la masa, y luego cúbrelo con más masa para sellar el cubilete.\n" +
-                        "Coloca los moldes en el horno y hornea durante 20-25 minutos o hasta que los cubiletes estén dorados en la parte superior.\n" +
-                        "Deja enfriar un poco antes de desmoldar.\n",
-                fontSize = 18.sp,
-                modifier = Modifier.padding(16.dp)
-            )
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // 📌 Caja con borde para la descripción
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.9f)
+                    .border(
+                        BorderStroke(3.dp, Color(0xFF8D6E63)), // Borde café claro
+                        RoundedCornerShape(12.dp)
+                    )
+                    .background(Color(0xFFFFF3E0), RoundedCornerShape(12.dp)) // Fondo crema suave
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = """
+                        🌽 Ingredientes:
+                        - 1 taza de harina de maíz
+                        - 1 taza de harina de trigo
+                        - ½ taza de mantequilla derretida
+                        - ½ taza de azúcar
+                        - 1 huevo
+                        - 1 cucharadita de polvo para hornear
+                        - ½ taza de leche
+                        - 1 cucharadita de esencia de vainilla
+                        - Pizca de sal
+
+                        🧀 Relleno de elote:
+                        - 2 tazas de granos de elote
+                        - ½ taza de crema
+                        - 1 cucharadita de azúcar
+                        - 1 cucharadita de esencia de vainilla
+                        - 2 cucharadas de maicena disueltas en agua
+                        - Pizca de sal
+
+                        🍽️ Preparación:
+                        1️⃣ Mezcla los ingredientes secos de la masa.
+                        2️⃣ Agrega la mantequilla, huevo y líquidos hasta formar una masa homogénea.
+                        3️⃣ Licúa el elote con crema y azúcar, cocina con la maicena hasta espesar.
+                        4️⃣ Forma los cubiletes con la masa y rellénalos con la mezcla de elote.
+                        5️⃣ Hornea a 180°C por 25 minutos y deja enfriar.
+                        6️⃣ ¡Disfruta de este delicioso postre!
+                    """.trimIndent(),
+                    fontSize = 18.sp,
+                    fontFamily = FontFamily.Serif, // Fuente más elegante
+                    fontWeight = FontWeight.Medium,
+                    textAlign = TextAlign.Start,
+                    color = Color(0xFF4E342E) // Café oscuro para buena lectura
+                )
+            }
+
             Spacer(modifier = Modifier.height(20.dp))
-            Button(onClick = { navController.navigate("home") }) {
-                Text("Regresar", fontSize = 16.sp)
+
+            // 🔘 Botón estilizado
+            Button(
+                onClick = { navController.navigate("home") },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF8D6E63),
+                    contentColor = Color.White
+                ),
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier
+                    .fillMaxWidth(0.6f)
+                    .height(48.dp)
+            ) {
+                Text("Regresar", fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
         }
     }
