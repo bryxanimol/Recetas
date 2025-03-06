@@ -1,10 +1,10 @@
 package com.example.recetas.Views
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -24,7 +24,7 @@ import com.example.recetas.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RecipeDetailView(navController: NavController) {
+fun RecipeDetailView(navController: NavController, background: Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -45,7 +45,8 @@ fun RecipeDetailView(navController: NavController) {
                 contentDescription = null,
                 modifier = Modifier
                     .size(250.dp)
-                    .padding(16.dp)
+                    .padding(16.dp) // Espaciado interno
+                    .border(4.dp, Color.White) // 📌 Agrega un borde blanco de 4dp
             )
             Text(
                 text = "Ingredientes\n" +
