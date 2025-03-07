@@ -19,10 +19,13 @@
 
 ## Capturas de pantalla
 
-![Pantalla 1](screenshots/cap1.png)
-![Pantalla 2](screenshots/cap2.png)
-![Pantalla 3](screenshots/cap3.png)
-![Pantalla 4](screenshots/cap4.png)
+Aquí hay algunas capturas de pantalla del proyecto:
+
+![Captura 1](cap1.jpg)
+![Captura 2](cap2.jpg)
+![Captura 3](cap3.jpg)
+![Captura 4](cap4.jpg)
+
 
 Alumno: Bryan De la Cruz Molina 22130528
 
