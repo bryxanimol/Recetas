@@ -21,10 +21,12 @@
 
 Aquí hay algunas capturas de pantalla del proyecto:
 
-![Captura 1](cap1.jpg)
-![Captura 2](cap2.jpg)
-![Captura 3](cap3.jpg)
-![Captura 4](cap4.jpg)
+<p align="center">
+  <img src="cap1.jpg" alt="Captura 1" width="250">
+  <img src="cap2.jpg" alt="Captura 2" width="250">
+  <img src="cap3.jpg" alt="Captura 3" width="250">
+  <img src="cap4.jpg" alt="Captura 4" width="250">
+</p>
 
 
 Alumno: Bryan De la Cruz Molina 22130528
