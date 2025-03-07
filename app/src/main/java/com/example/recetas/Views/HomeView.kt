@@ -37,7 +37,7 @@ fun HomeView(navController: NavController, background: Modifier) {
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFF6D4C41)) // 🍫 Café chocolate
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFF6D4C41))
             )
         },
         containerColor = Color.Transparent
@@ -67,26 +67,26 @@ fun RecipeItem(navController: NavController, imageRes: Int, buttonText: String, 
     ) {
         Box(
             modifier = Modifier
-                .size(210.dp) // 🔥 Ajuste de tamaño igual para todas las imágenes
-                .clip(RoundedCornerShape(16.dp)) // 🟠 Bordes redondeados
-                .background(Color(0xFFD7CCC8)) // 🌟 Borde de color beige
-                .padding(4.dp) // 🔹 Espaciado interno para el borde
+                .size(210.dp) // Ajuste de tamaño igual para todas las imágenes
+                .clip(RoundedCornerShape(16.dp)) // Bordes redondeados
+                .background(Color(0xFFD7CCC8)) // Borde de color beige
+                .padding(4.dp) // Espaciado interno para el borde
         ) {
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxSize()
-                    .clip(RoundedCornerShape(12.dp)) // 📌 Ajuste dentro del borde
-                    .shadow(6.dp), // ✨ Sombra más ligera
-                contentScale = ContentScale.Crop // Ajusta la imagen para llenar el contenedor sin distorsionar
+                    .clip(RoundedCornerShape(12.dp)) //  Ajuste dentro del borde
+                    .shadow(6.dp),
+                contentScale = ContentScale.Crop
             )
         }
         Spacer(modifier = Modifier.height(12.dp))
         Button(
             onClick = { navController.navigate(route) },
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF8D6E63), // ☕ Café claro
+                containerColor = Color(0xFF8D6E63),
                 contentColor = Color.White
             ),
             shape = RoundedCornerShape(12.dp),

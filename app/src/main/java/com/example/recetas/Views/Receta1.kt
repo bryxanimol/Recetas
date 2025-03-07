@@ -48,39 +48,39 @@ fun RecipeDetailView(navController: NavController, background: Modifier) {
                 .fillMaxSize()
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
-                .background(Color.White), // Fondo blanco para que no se sobrecargue el color
+                .background(Color.White),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 🔥 Borde decorativo para la imagen
+
             Box(
                 modifier = Modifier
-                    .size(260.dp) // El tamaño de la imagen se ajusta al borde
-                    .clip(RoundedCornerShape(16.dp)) // Bordes redondeados
-                    .background(Color(0xFFE57373)) // Borde color rojo suave (contrasta bien con el amarillo)
-                    .padding(4.dp) // Espaciado interno para el borde
+                    .size(260.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(Color(0xFFE57373))
+                    .padding(4.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.pastelera1),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxSize()
-                        .clip(RoundedCornerShape(12.dp)) // Bordes redondeados para la imagen
-                        .shadow(6.dp), // Sombra más ligera para profundidad
-                    contentScale = ContentScale.Crop // Ajusta la imagen para llenar el contenedor sin distorsionarse
+                        .clip(RoundedCornerShape(12.dp))
+                        .shadow(6.dp),
+                    contentScale = ContentScale.Crop
                 )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 📌 Caja con borde para la descripción
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .border(
-                        BorderStroke(3.dp, Color(0xFF8D6E63)), // Borde café claro
+                        BorderStroke(3.dp, Color(0xFF8D6E63)),
                         RoundedCornerShape(12.dp)
                     )
-                    .background(Color(0xFFFFF3E0), RoundedCornerShape(12.dp)) // Fondo crema suave
+                    .background(Color(0xFFFFF3E0), RoundedCornerShape(12.dp))
                     .padding(16.dp)
             ) {
                 Text(
@@ -109,16 +109,16 @@ fun RecipeDetailView(navController: NavController, background: Modifier) {
                         6️⃣ ¡Disfruta!
                     """.trimIndent(),
                     fontSize = 18.sp,
-                    fontFamily = FontFamily.Serif, // Fuente más elegante
+                    fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Medium,
                     textAlign = TextAlign.Start,
-                    color = Color(0xFF4E342E) // Café oscuro para buena lectura
+                    color = Color(0xFF4E342E)
                 )
             }
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // 🔘 Botón estilizado
+
             Button(
                 onClick = { navController.navigate("home") },
                 colors = ButtonDefaults.buttonColors(

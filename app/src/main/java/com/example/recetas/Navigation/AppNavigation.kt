@@ -23,9 +23,9 @@ fun AppNavigation(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF5E1A4)) // 📌 Fondo de color debajo de la imagen
+            .background(Color(0xFFF5E1A4))
     ) {
-        // Imagen de fondo
+
         Image(
             painter = painterResource(id = R.drawable.fondo),
             contentDescription = "Fondo de la aplicación",

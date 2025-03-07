@@ -39,7 +39,7 @@ fun RecipeDetailView3(navController: NavController, background: Modifier) {
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFF4CAF50)) // 🌿 Verde limón
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFF4CAF50))
             )
         }
     ) { paddingValues ->
@@ -48,39 +48,39 @@ fun RecipeDetailView3(navController: NavController, background: Modifier) {
                 .fillMaxSize()
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
-                .background(Color(0xFFE8F5E9)), // 💚 Fondo verde claro
+                .background(Color(0xFFE8F5E9)),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 📌 Borde decorativo para la imagen
+
             Box(
                 modifier = Modifier
-                    .size(260.dp) // Aseguramos que el tamaño de la imagen sea consistente
-                    .clip(RoundedCornerShape(16.dp)) // Bordes redondeados
-                    .background(Color(0xFF81C784)) // Verde pastel que hace contraste con el fondo
-                    .padding(6.dp) // Espaciado interno para el borde
+                    .size(260.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(Color(0xFF81C784))
+                    .padding(6.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.pay1),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxSize()
-                        .clip(RoundedCornerShape(12.dp)) // Bordes redondeados para la imagen
-                        .shadow(6.dp), // Sombra ligera para profundidad
-                    contentScale = ContentScale.Crop // Ajusta la imagen sin distorsionarla
+                        .clip(RoundedCornerShape(12.dp))
+                        .shadow(6.dp),
+                    contentScale = ContentScale.Crop
                 )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 📌 Caja con borde para la descripción
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .border(
-                        BorderStroke(3.dp, Color(0xFF388E3C)), // Borde verde oscuro
+                        BorderStroke(3.dp, Color(0xFF388E3C)),
                         RoundedCornerShape(12.dp)
                     )
-                    .background(Color(0xFFF1F8E9), RoundedCornerShape(12.dp)) // Fondo verde muy claro
+                    .background(Color(0xFFF1F8E9), RoundedCornerShape(12.dp))
                     .padding(16.dp)
             ) {
                 Text(
@@ -110,10 +110,10 @@ fun RecipeDetailView3(navController: NavController, background: Modifier) {
                         ¡Listo para disfrutar! 🎉
                     """.trimIndent(),
                     fontSize = 18.sp,
-                    fontFamily = FontFamily.Serif, // Fuente elegante
+                    fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Medium,
                     textAlign = TextAlign.Start,
-                    color = Color(0xFF2E7D32) // Verde oscuro para contraste y lectura
+                    color = Color(0xFF2E7D32)
                 )
             }
 

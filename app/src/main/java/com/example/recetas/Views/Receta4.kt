@@ -38,7 +38,7 @@ fun RecipeDetailView4(navController: NavController, background: Modifier) {
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFFD84315)) // 🔥 Naranja rústico
+                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFFD84315))
             )
         }
     ) { paddingValues ->
@@ -47,38 +47,38 @@ fun RecipeDetailView4(navController: NavController, background: Modifier) {
                 .fillMaxSize()
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState())
-                .background(Color(0xFFFFF3E0)), // Fondo beige claro para contraste suave
+                .background(Color(0xFFFFF3E0)),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 📌 Imagen ajustada al borde y con un color contrastante
+
             Box(
                 modifier = Modifier
-                    .fillMaxWidth() // Ajuste al ancho completo
-                    .height(250.dp) // Tamaño ajustado de la imagen
-                    .clip(RoundedCornerShape(16.dp)) // Esquinas redondeadas
-                    .shadow(6.dp, shape = RoundedCornerShape(16.dp)) // Sombra suave
-                    .background(Color(0xFFD84315)) // Contraste con color naranja
+                    .fillMaxWidth()
+                    .height(250.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .shadow(6.dp, shape = RoundedCornerShape(16.dp))
+                    .background(Color(0xFFD84315))
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.coyotas1),
                     contentDescription = null,
                     modifier = Modifier
-                        .fillMaxSize() // Imagen ajustada al tamaño de la caja
-                        .clip(RoundedCornerShape(16.dp)) // Esquinas redondeadas
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(16.dp))
                 )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 📌 Caja con fondo y borde para la descripción
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
                     .border(
-                        BorderStroke(3.dp, Color(0xFFBF360C)), // 🌰 Borde marrón oscuro
+                        BorderStroke(3.dp, Color(0xFFBF360C)),
                         RoundedCornerShape(12.dp)
                     )
-                    .background(Color(0xFFFFE0B2), RoundedCornerShape(12.dp)) // 🍪 Fondo beige suave
+                    .background(Color(0xFFFFE0B2), RoundedCornerShape(12.dp))
                     .padding(16.dp)
             ) {
                 Text(
@@ -110,17 +110,17 @@ fun RecipeDetailView4(navController: NavController, background: Modifier) {
                     fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Medium,
                     textAlign = TextAlign.Start,
-                    color = Color(0xFF6D4C41) // 🍂 Marrón para buen contraste
+                    color = Color(0xFF6D4C41)
                 )
             }
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // 🔘 Botón estilizado
+
             Button(
                 onClick = { navController.navigate("home") },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFBF360C), // 🔥 Naranja oscuro
+                    containerColor = Color(0xFFBF360C),
                     contentColor = Color.White
                 ),
                 shape = RoundedCornerShape(12.dp),
