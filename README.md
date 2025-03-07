@@ -1,22 +1,23 @@
-Recetario con Jetpack Compose 
-Recetario es una aplicación de Android desarrollada con Jetpack Compose, 
-diseñada para mostrar recetas detalladas con imágenes, ingredientes 
-y pasos de preparación. La app permite navegar entre distintas recetas mediante Jetpack Navigation, 
-con una interfaz moderna y fluida.
+# Recetario - Aplicación Android
 
-Características
-Visualización de recetas con imágenes, ingredientes y pasos detallados.
-Interfaz desarrollada con Jetpack Compose, aprovechando su eficiencia y facilidad para crear UI declarativas.
-Barra de navegación superior con título y colores personalizados para cada receta.
-Scroll vertical para ver recetas completas sin interrupciones.
-Navegación fluida entre pantallas usando NavController.
+**Recetario** es una aplicación de Android desarrollada con Jetpack Compose, diseñada para mostrar recetas detalladas con imágenes, ingredientes y pasos de preparación. La app permite navegar entre distintas recetas mediante Jetpack Navigation, con una interfaz moderna y fluida.
 
-Librerías utilizadas
-Jetpack Compose	Para la construcción de la UI de la aplicación
-Material 3	Diseño moderno con componentes de Google Material 3
-Navigation Compose	Manejo de la navegación entre pantallas
+## Características
 
-Capturas de pantalla
+- Visualización de recetas con imágenes, ingredientes y pasos detallados.
+- Interfaz desarrollada con **Jetpack Compose**, aprovechando su eficiencia y facilidad para crear UI declarativas.
+- Barra de navegación superior con título y colores personalizados para cada receta.
+- Scroll vertical para ver recetas completas sin interrupciones.
+- Navegación fluida entre pantallas usando **NavController**.
+
+## Librerías utilizadas
+
+- **Jetpack Compose**: Para la construcción de la UI de la aplicación.
+- **Material 3**: Diseño moderno con componentes de Google Material 3.
+- **Navigation Compose**: Manejo de la navegación entre pantallas.
+
+
+## Capturas de pantalla
 
 ![Pantalla 1](screenshots/cap1.png)
 ![Pantalla 2](screenshots/cap2.png)
@@ -25,5 +26,5 @@ Capturas de pantalla
 
 Alumno: Bryan De la Cruz Molina 22130528
 
-Clona este repositorio:
+## Clona este repositorio:
 https://github.com/bryxanimol/Recetas
